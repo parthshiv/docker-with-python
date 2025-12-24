@@ -1,0 +1,14 @@
+version: '3'
+services:
+  python_service: # you can use any name of service
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - BASE_IMAGE=python:3.11.9 # this can be used in Dockerfile as argument
+        - APP_VERSION=2.0 # this can be used in Dockerfile as argument
+    environment:
+      - DEBUG=true
+    image: parthshivu/python_web:2.1
+
+  
